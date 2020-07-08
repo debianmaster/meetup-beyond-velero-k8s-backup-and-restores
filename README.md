@@ -29,7 +29,7 @@ k delete all,pvc --all -n default
 
 ## Restore
 ```
-velero create restore restore1 
+velero create restore restore1 --from-backup=backup1
 ```
 
 ## Check workload
