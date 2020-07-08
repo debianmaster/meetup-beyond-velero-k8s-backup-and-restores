@@ -11,7 +11,7 @@ velero install \
 --backup-location-config region=minio,s3ForcePathStyle="true",s3Url=http://13.250.45.75.nip.io:9000
 ```
 
-## deploy app
+## Deploy app
 ```
 kubectl apply -f https://bit.ly/k8s-app
 ```
@@ -21,18 +21,18 @@ kubectl apply -f https://bit.ly/k8s-app
 velero create backup backup1 --snapshot-volumes --include-namespaces=default
 ```
 
-## simulate disaster
+## Simulate disaster
 ```
 k delete all,pvc --all -n default
 ```
 
 
-## restore
+## Restore
 ```
 velero create restore restore1 
 ```
 
-## check workload
+## Check workload
 ```
 kubectl get all,pvc -n default
 ```
