@@ -18,7 +18,8 @@ kubectl apply -f https://bit.ly/k8s-app
 
 ## Take backup from default namespace
 ```
-velero create backup backup1 --snapshot-volumes --include-namespaces=default
+velero create backup backup1  --snapshot-volumes --include-namespaces=default
+velero backup describe backup1 --details
 ```
 
 ## Simulate disaster
@@ -30,6 +31,7 @@ k delete all,pvc --all -n default
 ## Restore
 ```
 velero create restore restore1 --from-backup=backup1
+velero restore describe restore1 --details
 ```
 
 ## Check workload
