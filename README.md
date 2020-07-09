@@ -18,7 +18,7 @@ kubectl apply -f https://bit.ly/k8s-app
 
 ## Take backup from default namespace
 ```
-velero create backup backup1  --snapshot-volumes --include-namespaces=default
+velero create backup backup1   --include-namespaces=default
 velero backup describe backup1 --details
 ```
 
