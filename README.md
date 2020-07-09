@@ -24,7 +24,7 @@ velero backup describe backup1 --details
 
 ## Simulate disaster
 ```
-k delete all,pvc --all -n default
+k delete all,pvc,ing --all -n default
 ```
 
 
